@@ -1,0 +1,122 @@
+/* === CSS pour Fitness Mate === */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root {
+  --jaune: #FFD600;
+  --noir: #000000;
+  --blanc: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Anton', sans-serif;
+  color: var(--noir);
+  background-color: var(--blanc);
+}
+
+/* === Header / Bannière === */
+.banniere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 30px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+
+.logo {
+  height: 200px;
+  width: auto;
+}
+
+.texte-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nom-site {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--noir);
+}
+
+.slogan {
+  font-size: 1.2rem;
+  color: var(--noir);
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* === Menu burger === */
+.menu-burger {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.menu-burger.active {
+  transform: rotate(90deg);
+}
+
+.menu-burger span {
+  height: 4px;
+  width: 35px;
+  background-color: var(--noir);
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+/* === Menu déroulant animé === */
+.menu-deroulant {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--jaune);
+  border-right: 3px solid var(--noir);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding-top: 100px;
+  z-index: 1000;
+}
+
+.menu-deroulant.active {
+  transform: translateX(0);
+}
+
+.menu-deroulant ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-deroulant li {
+  padding: 20px;
+  border-bottom: 1px solid var(--noir);
+}
+
+.menu-deroulant li a {
+  color: var(--noir);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+}
